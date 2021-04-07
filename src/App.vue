@@ -48,6 +48,7 @@ export default {
         this.previousTotal = null;
       }
       this.runningTotal = 0;
+      
     },
     operatorClick: function (operator) {
       // if there was a previous operator recorded as having been clicked, perform
@@ -92,7 +93,10 @@ export default {
       this.runningTotal = parseFloat(this.previousTotal) * parseFloat(number);
     },
     divide(number) {
+      if (number != 0)
       this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+      else 
+      this.runningTotal = 'What are you doing!'
     },
   },
 };
